@@ -21,20 +21,30 @@ import backend.gestion_missions.MissionService;
 
 public class Main {
     public static void main(String[] args) {
-        // 1. On crée le service (le gestionnaire de liste)
+        // Initialisation du service
         MissionService service = new MissionService();
 
-        // 2. On crée deux exemples de missions
-        // (Vérifie que ton constructeur dans Mission.java accepte bien : id, titre, description, statut)
-        Mission m1 = new Mission(1, "Acheter médicaments", "Pour un senior à Sousse", "En attente");
-        Mission m2 = new Mission(2, "Courses", "Porter les sacs lourds", "A faire");
+        // Création des missions (Sprint 2)
+        // Vérifie que ton constructeur Mission a bien 4 paramètres
+        Mission m1 = new Mission(1, "Achat Médicaments", "Pour un senior", "EN ATTENTE");
+        Mission m2 = new Mission(2, "Courses", "Aide à domicile", "A FAIRE");
 
-        // 3. On les ajoute au gestionnaire
+        // Utilisation du service
         service.ajouterMission(m1);
         service.ajouterMission(m2);
 
-        // 4. On affiche le résultat final
+        // Affichage final
         System.out.println("=== Application Rahet Belek - Sprint 2 ===");
         service.afficherMissions();
-    }
+    }    
+// 5. Test des nouvelles fonctionnalités (Image 017eda)
+        System.out.println("\n=== Missions disponibles ===");
+        service.afficherMissionsDisponibles();
+
+        System.out.println("\n=== Acceptation mission ===");
+        // On simule que Razan accepte la mission numéro 2
+        service.accepterMission(2, "Razan");
+
+        System.out.println("\n=== Mes missions (Razan) ===");
+        service.afficherMesMissions("Razan");
 }

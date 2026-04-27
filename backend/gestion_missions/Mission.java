@@ -5,12 +5,13 @@ public class Mission {
     private String titre;
     private String description;
     private String statut;
-
+    private String userAssigne;
     public Mission(int id, String titre, String description, String statut) {
         this.id = id;
         this.titre = titre;
         this.description = description;
         this.statut = statut;
+        this.userAssigne = userAssigne;
     }
 
     // getters et setters
@@ -25,4 +26,6 @@ public class Mission {
 
     public String getStatut() { return statut; }
     public void setStatut(String statut) { this.statut = statut; }
+    public String getUserAssigne() { return userAssigne; }
+    public void setUserAssigne(String userAssigne) { this.userAssigne = userAssigne; }
 }
